@@ -45,7 +45,9 @@ body {
   @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
 }
 
-/* Gradient text */
 .gradient-text {
-  @apply bg-gradient-to-r from-red-400 to-teal-400 bg-clip-text text-transparent;
+  background: linear-gradient(to right, #f87171, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
