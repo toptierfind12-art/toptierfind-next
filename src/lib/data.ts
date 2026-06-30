@@ -1,3 +1,4 @@
+
 // Quiz niches - 9 ClickBank funnels
 export const quizNiches = [
   {
@@ -92,58 +93,56 @@ export const quizNiches = [
   },
 ];
 
-// Shop categories - 6 CJDropshipping
 export const shopCategories = [
   {
-    id: 'fitness-gear',
-    title: 'Fitness Gear',
-    description: 'Home gym essentials',
-    image: 'https://picsum.photos/seed/fitnessgear/600/400',
-    href: '/shop/fitness-gear',
-    itemCount: '240+ items',
-  },
-  {
-    id: 'wellness',
-    title: 'Wellness',
-    description: 'Health & self-care',
-    image: 'https://picsum.photos/seed/wellness/600/400',
-    href: '/shop/wellness',
-    itemCount: '180+ items',
-  },
-  {
-    id: 'kitchen',
-    title: 'Kitchen & Diet',
-    description: 'Cook smarter',
-    image: 'https://picsum.photos/seed/kitchen/600/400',
-    href: '/shop/kitchen',
-    itemCount: '320+ items',
-  },
-  {
-    id: 'beauty',
-    title: 'Beauty',
+    id: 'beauty-wellness',
+    title: 'Beauty & Wellness',
     description: 'Look & feel your best',
-    image: 'https://picsum.photos/seed/beauty/600/400',
-    href: '/shop/beauty',
-    itemCount: '410+ items',
+    image: 'https://picsum.photos/seed/beautywellness/600/400',
+    href: '/shop/beauty-wellness',
+    itemCount: '4+ items',
   },
   {
-    id: 'tech',
-    title: 'Tech & Gadgets',
+    id: 'electronics',
+    title: 'Electronics',
     description: 'Smart tools for life',
-    image: 'https://picsum.photos/seed/techgadgets/600/400',
-    href: '/shop/tech',
-    itemCount: '290+ items',
+    image: 'https://picsum.photos/seed/electronics/600/400',
+    href: '/shop/electronics',
+    itemCount: '8+ items',
   },
   {
-    id: 'lifestyle',
-    title: 'Lifestyle',
-    description: 'Level up every day',
-    image: 'https://picsum.photos/seed/lifestyle/600/400',
-    href: '/shop/lifestyle',
-    itemCount: '200+ items',
+    id: 'home-improvement',
+    title: 'Home Improvement',
+    description: 'Upgrade your space',
+    image: 'https://picsum.photos/seed/homeimprovement/600/400',
+    href: '/shop/home-improvement',
+    itemCount: '6+ items',
+  },
+  {
+    id: 'kitchen-dining',
+    title: 'Kitchen & Dining',
+    description: 'Cook smarter',
+    image: 'https://picsum.photos/seed/kitchendining/600/400',
+    href: '/shop/kitchen-dining',
+    itemCount: '8+ items',
+  },
+  {
+    id: 'pet-supplies',
+    title: 'Pet Supplies',
+    description: 'Spoil your furry friend',
+    image: 'https://picsum.photos/seed/petsupplies/600/400',
+    href: '/shop/pet-supplies',
+    itemCount: '7+ items',
+  },
+  {
+    id: 'sports-outdoor',
+    title: 'Sports & Outdoor',
+    description: 'Gear up and go',
+    image: 'https://picsum.photos/seed/sportsoutdoor/600/400',
+    href: '/shop/sports-outdoor',
+    itemCount: '7+ items',
   },
 ];
-
 // Featured products - placeholder (will be WP REST API driven)
 export const featuredProducts = [
   {
