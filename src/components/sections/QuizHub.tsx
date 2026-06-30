@@ -47,7 +47,7 @@ export default function QuizHub() {
         >
           {quizNiches.map((niche, i) => (
             <motion.div key={niche.id} variants={cardVariants}>
-              <Link href={niche.href} className="group block relative overflow-hidden rounded-2xl h-52 cursor-pointer">
+              <Link href={niche.href} target="_blank" rel="noopener noreferrer" className="group block relative overflow-hidden rounded-2xl h-52 cursor-pointer">
                 {/* Background image */}
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
