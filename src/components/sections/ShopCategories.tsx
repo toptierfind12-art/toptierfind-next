@@ -4,7 +4,11 @@ import Link from 'next/link';
 import { shopCategories } from '@/lib/data';
 import { ArrowRight } from 'lucide-react';
 
-export default function ShopCategories() {
+interface Props {
+  thumbnails: Record<string, string>;
+}
+
+export default function ShopCategories({ thumbnails }: Props) {
   return (
     <section className="py-20 md:py-28 px-4 md:px-8 bg-[#1A1A2E]">
       <div className="max-w-7xl mx-auto">
@@ -37,7 +41,6 @@ export default function ShopCategories() {
         {/* 6-Category Grid — asymmetric layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {shopCategories.map((cat, i) => {
-            // First 2 items are large, next 4 are smaller
             const isLarge = i < 2;
             return (
               <motion.div
@@ -56,18 +59,14 @@ export default function ShopCategories() {
                   {/* BG Image */}
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                    style={{ backgroundImage: `url(${cat.image})` }}
+                    style={{ backgroundImage: `url(${thumbnails[cat.id] || cat.image})` }}
                   />
-
                   {/* Dark overlay always */}
                   <div className="absolute inset-0 bg-[#1A1A2E]/60" />
-
                   {/* Teal overlay on hover */}
                   <div className="absolute inset-0 bg-[#00A699]/0 group-hover:bg-[#00A699]/25 transition-all duration-400" />
-
                   {/* Bottom gradient */}
                   <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#1A1A2E] to-transparent" />
-
                   {/* Content */}
                   <div className="absolute inset-0 p-6 flex flex-col justify-end">
                     <div className="flex items-end justify-between">

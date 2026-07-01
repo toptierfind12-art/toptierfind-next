@@ -50,7 +50,6 @@ export async function getFeaturedProducts(limit = 4): Promise<WCProduct[]> {
   return data || [];
 }
 
-// Static map — avoids an extra API call on every page load just to resolve slug -> id
 export const CATEGORY_MAP: Record<string, { id: number; name: string }> = {
   'beauty-wellness': { id: 55, name: 'Beauty & Wellness' },
   'electronics': { id: 56, name: 'Electronics' },
@@ -65,4 +64,19 @@ export async function getProductsByCategorySlug(slug: string, limit = 24): Promi
   if (!cat) return [];
   const data = await wcFetch(`/products?category=${cat.id}&per_page=${limit}&status=publish`);
   return data || [];
+}
+
+export async function getCategoryThumbnails(): Promise<Record<string, string>> {
+  const slugs = Object.keys(CATEGORY_MAP);
+
+  const results = await Promise.all(
+    slugs.map(async (slug) => {
+      const cat = CATEGORY_MAP[slug];
+      const data = await wcFetch(`/products?category=${cat.id}&per_page=1&status=publish`);
+      const image = data?.[0]?.images?.[0]?.src || null;
+      return [slug, image];
+    })
+  );
+
+  return Object.fromEntries(results.filter(([, img]) => img !== null));
 }
